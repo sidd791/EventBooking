@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
         user = User(
             username=validated_data["username"],
             role=validated_data["role"],
-            password=validated_data["password"],
+            email=validated_data["email"]
         )
         user.set_password(validated_data["password"])
         user.save()
@@ -27,7 +27,7 @@ class UserSerializer(serializers.ModelSerializer):
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
         model = Event
-        fields = ["event_organizer", "name", "venue", "date"]
+        fields = ["event_organizer", "name", "venue", "date", "id"]
 
 
 class CustomerSerializer(serializers.ModelSerializer):
@@ -51,4 +51,4 @@ class BookingSerializer(serializers.ModelSerializer):
 class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
-        fields = ["event", "price", "ticket_type", "availability"]
+        fields = ["event", "price", "ticket_type", "availability", "id"]

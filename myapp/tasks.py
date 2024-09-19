@@ -8,7 +8,6 @@ def booking_confirmation(email, event_name, ticket_type, quantity):
     )
 
 
-# Task to send an email notification when an event is updated
 @shared_task
 def event_update(email, event_name, changes):
     print(

@@ -96,8 +96,9 @@ REST_FRAMEWORK = {
 
 CELERY_BROKER_URL = "redis://localhost:6379/0"
 
-# Optional: Configure result backend (if needed)
 CELERY_RESULT_BACKEND = "redis://localhost:6379/0"
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+
 
 # Task serialization format (optional)
 CELERY_ACCEPT_CONTENT = ["json"]
